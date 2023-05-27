@@ -11,7 +11,7 @@ npm install @sayeed1999/data-protection
 ## Usage
 
 ```javascript
-const hideSensitiveProperties = require('sensitive-property-hider');
+const { hideSensitiveProperties } = require('@sayeed1999/data-protection');
 
 const entity = {
   username: 'JohnDoe',
