@@ -1,0 +1,11 @@
+{
+  "name": "@sayeed1999/data-protection",
+  "version": "1.0.0",
+  "description": "A simple yet powerful package to protect sensative information in your javascript objects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Md. Sayeed Rahman <mdsayeedrahman1999@gmail.com>",
+  "license": "MIT"
+}
