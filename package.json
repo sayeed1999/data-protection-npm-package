@@ -1,6 +1,6 @@
 {
   "name": "@sayeed1999/data-protection",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple yet powerful package to protect sensative information in your javascript objects.",
   "main": "index.js",
   "scripts": {
