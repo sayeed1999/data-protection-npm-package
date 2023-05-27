@@ -1,4 +1,14 @@
+const defaultSensativeKeywords = [
+  "pass",
+  "auth",
+  "token",
+  "secret",
+  "pwd",
+  "key",
+];
+
 function hideSensitiveProperties(entity, sensitiveKeywords) {
+  if (!sensitiveKeywords) sensitiveKeywords = defaultSensativeKeywords.slice();
   hideSecretFieldsRecursively(entity, sensitiveKeywords);
 
   return entity;
