@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-npm install sensitive-property-hider
+npm install @sayeed1999/data-protection
 ```
 
 ## Usage
