@@ -2,7 +2,6 @@
 
 `@sayeed1999/data-protection` is a utility package that helps you hide sensitive properties within any JavaScript object, regardless of its depth. This ensures that sensitive data is never leaked to end-users.
 
-
 ## Installation
 
 ```bash
@@ -12,27 +11,26 @@ npm install @sayeed1999/data-protection
 ## Usage
 
 ```javascript
-const { hideSensitiveProperties } = require('@sayeed1999/data-protection');
+const { hideSensitiveProperties } = require("@sayeed1999/data-protection");
 
 const entity = {
-  username: 'JohnDoe',
-  password: 's3cr3t',
-  addresses: [
+  username: "JohnDoe",
+  password: "s3cr3t",
   addresses: [
     {
-      street: '123 Main St',
+      street: "123 Main St",
       secretKey: "zxczxcasdasdqw",
     },
     {
-      street: '456 Main St',
+      street: "456 Main St",
       secretKey: "pqpqpqpqpqwww",
-    }
+    },
   ],
   creditCard: {
-    number: '1234 5678 9012 3456',
-    cvv: '123',
-    expiryDate: '12/23'
-  }
+    number: "1234 5678 9012 3456",
+    cvv: "123",
+    expiryDate: "12/23",
+  },
 };
 
 const safeEntity = hideSensitiveProperties(entity);
@@ -69,7 +67,6 @@ The hideSensitiveProperties function is called with the entity object as argumen
 
 Finally, the safeEntity object is logged to the console, showing the result of hiding the sensitive properties.
 
-
 ## API
 
 ```javascript
@@ -84,7 +81,6 @@ Recursively hides sensitive properties within the provided entity object based o
 
 Returns the modified entity object with sensitive properties set to null.
 
-
 ## Customization
 
 By default, the package uses a set of sensitive keywords ({ "pass", "auth", "token", "secret", "pwd", "key" }) to identify sensitive properties. If you need to customize the list of sensitive keywords, simply provide your own array of keywords as the second parameter.
@@ -92,7 +88,17 @@ By default, the package uses a set of sensitive keywords ({ "pass", "auth", "tok
 ```javascript
 // Use this code to hide sensative informations based on your custom set of sensative keywords.
 
-const sensitiveKeywords = ['password', 'secret', 'count', 'deleted', 'created', 'updated', 'modified', 'key', 'token'];
+const sensitiveKeywords = [
+  "password",
+  "secret",
+  "count",
+  "deleted",
+  "created",
+  "updated",
+  "modified",
+  "key",
+  "token",
+];
 const securedEntity = hideSensitiveProperties(entity, sensitiveKeywords);
 ```
 
