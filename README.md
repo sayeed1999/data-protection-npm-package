@@ -1,12 +1,7 @@
 # @sayeed1999/data-protection
 
-`@sayeed1999/data-protection` is a utility package that helps you hide sensitive properties within any javascript object regardless of depth. Which means is, you can have any level of complex javascript object in your project. You just pass the object as parameter into our predefined method and get the secured object as return value. Your sensative data gets never leaked to end-users.
+`@sayeed1999/data-protection` is a utility package that helps you hide sensitive properties within any JavaScript object, regardless of its depth. This ensures that sensitive data is never leaked to end-users.
 
-We provide you our default set of sensative keywords that are enough to cover almost 90% of your business needs. If still you need to customize the list of sensative keywords, we give you that option.
-
-Default list of sensative keywords that are used to find sensative properties in your object: `{ "pass", "auth", "token", "secret", "pwd", "key" }`
-
-Our predefined list is enough to cover almost all of your businesses. For example, `pass matches Password, passWord, UserPass`; `key matches JwtKey, ApiKey`; `secret matches ClientSecret`.
 
 ## Installation
 
@@ -40,14 +35,10 @@ const entity = {
   }
 };
 
-const sensitiveKeywords = ['password', 'secret'];
+const safeEntity = hideSensitiveProperties(entity);
 
-// Use this code to hide sensative informations based on default set of sensative keywords.
-// const hiddenEntity = hideSensitiveProperties(entity);
+console.log(safeEntity);
 
-const hiddenEntity = hideSensitiveProperties(entity, sensitiveKeywords);
-
-console.log(hiddenEntity);
 /*
 Output:
 {
@@ -72,6 +63,13 @@ Output:
 */
 ```
 
+The code snippet demonstrates how to use the hideSensitiveProperties function from the @sayeed1999/data-protection package. It starts by importing the function. Then, an example object called entity is defined, which contains sensitive properties like password and secretKey.
+
+The hideSensitiveProperties function is called with the entity object as argument. The function returns a modified safeEntity object where the sensitive properties are set to null.
+
+Finally, the safeEntity object is logged to the console, showing the result of hiding the sensitive properties.
+
+
 ## API
 
 ```javascript
@@ -82,9 +80,21 @@ Recursively hides sensitive properties within the provided entity object based o
 
 `entity`: The object in which sensitive properties will be hidden.
 
-`sensitiveKeywords`: An array of keywords used to identify sensitive properties.
+`sensitiveKeywords`: (Optional property) An array of keywords used to identify sensitive properties.
 
 Returns the modified entity object with sensitive properties set to null.
+
+
+## Customization
+
+By default, the package uses a set of sensitive keywords ({ "pass", "auth", "token", "secret", "pwd", "key" }) to identify sensitive properties. If you need to customize the list of sensitive keywords, simply provide your own array of keywords as the second parameter.
+
+```javascript
+// Use this code to hide sensative informations based on your custom set of sensative keywords.
+
+const sensitiveKeywords = ['password', 'secret', 'count', 'deleted', 'created', 'updated', 'modified', 'key', 'token'];
+const securedEntity = hideSensitiveProperties(entity, sensitiveKeywords);
+```
 
 ## Contributing
 
