@@ -1,6 +1,10 @@
 # @sayeed1999/data-protection
 
-`@sayeed1999/data-protection` npm package is a utility package that helps you hide sensitive properties within an object. It allows you to specify sensitive keywords and recursively hide properties that contain these keywords.
+`@sayeed1999/data-protection` is a utility package that helps you hide sensitive properties within any javascript object regardless of depth. Which means is, you can have any level of complex javascript object in your project. You just pass the object as parameter into our predefined method and get the secured object as return value. Your sensative data gets never leaked to end-users.
+
+We provide you our default set of sensative keywords that are enough to cover almost 90% of your business needs. If still you need to customize the list of sensative keywords, we give you that option.
+
+Default list of sensative keywords that are used to find sensative properties in your object: ```{ "pass", "auth", "token", "secret", "pwd", "key" }``` Our predefined list is enough to cover almost all of your businesses. For example, `pass matches Password, passWord, UserPass`; `key matches JwtKey, ApiKey`; `secret matches ClientSecret`.
 
 ## Installation
 
@@ -78,6 +82,11 @@ Recursively hides sensitive properties within the provided entity object based o
 
 Returns the modified entity object with sensitive properties set to null.
 
-## License
+## Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue on the [GitHub repository](https://github.com/sayeed1999/data-protection-npm-package).
 
-This project is licensed under the MIT License.
+## License
+This library is licensed under the MIT License. See the [LICENSE](https://github.com/sayeed1999/data-protection-npm-package/blob/main/LICENSE) file for more details.
+
+## Acknowledgements
+This library was developed by [Md. Sayeed Rahman](https://www.linkedin.com/in/mdsayeedrahman1999/).
